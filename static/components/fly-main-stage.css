@@ -1,0 +1,51 @@
+body {
+  font-family: 'Microsoft Yahei', Tahoma, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden; }
+
+.fly-pub-page {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  background: #4f8341; }
+  .fly-pub-page .fly-shape-C {
+    width: 100vw;
+    position: absolute;
+    z-index: 100; }
+  .fly-pub-page .fly-center-circle {
+    position: absolute;
+    top: 10vh;
+    width: 100vw;
+    height: 100vw;
+    background: #fff;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 5px 15px 0 #3d772b; }
+  .fly-pub-page .fly-rice {
+    position: absolute;
+    top: 56vh;
+    left: 5vw;
+    width: 50vw;
+    z-index: 101; }
+  .fly-pub-page .fly-btn-C {
+    position: absolute;
+    bottom: 3vh;
+    z-index: 102;
+    width: 80vw;
+    left: 10vw;
+    text-align: center; }
+    .fly-pub-page .fly-btn-C button {
+      width: 100%;
+      height: 26px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background: #a9cca0;
+      margin: 10px 0; }
+  .fly-pub-page .fly-reset {
+    text-align: right; }
+    .fly-pub-page .fly-reset a {
+      color: #fff; }
+
+/*# sourceMappingURL=fly-main-stage.css.map */
