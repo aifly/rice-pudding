@@ -118,6 +118,7 @@ body {
   width:100vw;
   height:100vh;
   overflow: auto;
+  overflow-x: hidden;
   .fly-index-content{
     width:100vw;
     box-sizing: border-box;
@@ -165,6 +166,21 @@ body {
         box-sizing: border-box;
         width:20px;
         height:20px;
+        color:red;
+        font-size:20px;
+        line-height:20px;
+
+      }
+      .fly-checked-rice{
+        @include pos(a);
+        left: 0;
+        top:0;
+        display: none;
+        &.active{
+
+          display: block;
+
+        }
       }
     }
   }
