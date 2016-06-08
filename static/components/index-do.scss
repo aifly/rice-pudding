@@ -199,9 +199,10 @@ body {
     @include pos(a);
     text-align: center;
     -webkit-text-size-adjust:none;
-    font-size:10px;
-    color:#fff;
-    top:43vh;
+    font-size:13px;
+    color:#f00;
+    top:45vh;
+
     //@include transform(scale(.8))
   }
 

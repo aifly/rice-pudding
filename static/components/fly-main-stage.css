@@ -27,8 +27,14 @@ body {
     position: absolute;
     top: 56vh;
     left: 5vw;
-    width: 50vw;
+    width: 100vw;
     z-index: 101; }
+    .fly-pub-page .fly-rice .rice {
+      width: 50vw; }
+    .fly-pub-page .fly-rice .main-logo {
+      width: 30vw;
+      margin-top: 5vh;
+      margin-left: 4vw; }
   .fly-pub-page .fly-btn-C {
     position: absolute;
     bottom: 3vh;

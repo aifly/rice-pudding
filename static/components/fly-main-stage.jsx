@@ -3,6 +3,7 @@ import React from 'react';
 import './fly-main-stage.css'
 import shape1 from '../images/shape1.png';
 import rice from '../images/rice.png';
+import logo from '../images/logo.png';
 
 import {utilMethods,_$,$$} from '../../utilMethod.es6';
 
@@ -20,8 +21,11 @@ export default class MainStage extends React.Component{
                     {this.props.subCircleCom}
                 </div>
                 <div className="fly-rice">
-                    <img src={'./static/js/'+rice} alt=""/>
+                    <img src={'./static/js/'+rice} className="rice" alt=""/>
+                    <img src={'./static/js/'+logo} className="main-logo" alt=""/>
                 </div>
+
+
                 <div className="fly-btn-C">
                     {this.props.btns}
                 </div>

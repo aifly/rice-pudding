@@ -138,8 +138,16 @@ body {
     @include pos(a);
     top:56vh;
     left:5vw;
-    width:50vw;
+    width:100vw;
     z-index:101;
+    .rice{
+      width:50vw;
+    }
+    .main-logo{
+      width:30vw;
+      margin-top:5vh;
+      margin-left:4vw;
+    }
   }
 
 .fly-btn-C{
