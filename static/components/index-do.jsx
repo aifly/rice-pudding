@@ -159,8 +159,6 @@ export default class IndexDo extends React.Component {
 
 
 
-
-        alert(222)
         window.location.hash = encodeURI(JSON.stringify(obj));
 
 
