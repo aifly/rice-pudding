@@ -11,6 +11,16 @@ import z2 from '../images/zz-2.png';
 import z3 from '../images/zz-3.png';
 import z4 from '../images/zz-4.png';
 
+import input from '../images/input.png';
+import ship1 from '../images/ship1.png';
+import ship2 from '../images/ship2.png';
+import ship3 from '../images/ship3.png';
+import ship4 from '../images/ship4.png';
+import ship5 from '../images/ship5.png';
+
+import step1 from '../images/step1.png';
+
+
 import $ from 'jquery';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -24,127 +34,6 @@ let Tween = {
     },
     easeIn: function (t, b, c, d) {  //加速曲线
         return c * (t /= d) * t + b;
-    },
-    easeOut: function (t, b, c, d) {  //减速曲线
-        return -c * (t /= d) * (t - 2) + b;
-    },
-    easeBoth: function (t, b, c, d) {  //加速减速曲线
-        if ((t /= d / 2) < 1) {
-            return c / 2 * t * t + b;
-        }
-        return -c / 2 * ((--t) * (t - 2) - 1) + b;
-    },
-    easeInStrong: function (t, b, c, d) {  //加加速曲线
-        return c * (t /= d) * t * t * t + b;
-    },
-    easeOutStrong: function (t, b, c, d) {  //减减速曲线
-        return -c * ((t = t / d - 1) * t * t * t - 1) + b;
-    },
-    easeBothStrong: function (t, b, c, d) {  //加加速减减速曲线
-        if ((t /= d / 2) < 1) {
-            return c / 2 * t * t * t * t + b;
-        }
-        return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
-    },
-    elasticIn: function (t, b, c, d, a, p) {  //正弦衰减曲线（弹动渐入）
-        if (t === 0) {
-            return b;
-        }
-        if ((t /= d) == 1) {
-            return b + c;
-        }
-        if (!p) {
-            p = d * 0.3;
-        }
-        if (!a || a < Math.abs(c)) {
-            a = c;
-            var s = p / 4;
-        } else {
-            var s = p / (2 * Math.PI) * Math.asin(c / a);
-        }
-        return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
-    },
-    elasticOut: function (t, b, c, d, a, p) {    //正弦增强曲线（弹动渐出）
-        if (t === 0) {
-            return b;
-        }
-        if ((t /= d) == 1) {
-            return b + c;
-        }
-        if (!p) {
-            p = d * 0.3;
-        }
-        if (!a || a < Math.abs(c)) {
-            a = c;
-            var s = p / 4;
-        } else {
-            var s = p / (2 * Math.PI) * Math.asin(c / a);
-        }
-        return a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * (2 * Math.PI) / p) + c + b;
-    },
-    elasticBoth: function (t, b, c, d, a, p) {
-        if (t === 0) {
-            return b;
-        }
-        if ((t /= d / 2) == 2) {
-            return b + c;
-        }
-        if (!p) {
-            p = d * (0.3 * 1.5);
-        }
-        if (!a || a < Math.abs(c)) {
-            a = c;
-            var s = p / 4;
-        }
-        else {
-            var s = p / (2 * Math.PI) * Math.asin(c / a);
-        }
-        if (t < 1) {
-            return -0.5 * (a * Math.pow(2, 10 * (t -= 1)) *
-                Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
-        }
-        return a * Math.pow(2, -10 * (t -= 1)) *
-            Math.sin((t * d - s) * (2 * Math.PI) / p) * 0.5 + c + b;
-    },
-    backIn: function (t, b, c, d, s) {     //回退加速（回退渐入）
-        if (typeof s == 'undefined') {
-            s = 1.70158;
-        }
-        return c * (t /= d) * t * ((s + 1) * t - s) + b;
-    },
-    backOut: function (t, b, c, d, s) {
-        if (typeof s == 'undefined') {
-            s = 3.70158;  //回缩的距离
-        }
-        return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
-    },
-    backBoth: function (t, b, c, d, s) {
-        if (typeof s == 'undefined') {
-            s = 1.70158;
-        }
-        if ((t /= d / 2) < 1) {
-            return c / 2 * (t * t * (((s *= (1.525)) + 1) * t - s)) + b;
-        }
-        return c / 2 * ((t -= 2) * t * (((s *= (1.525)) + 1) * t + s) + 2) + b;
-    },
-    bounceIn: function (t, b, c, d) {    //弹球减振（弹球渐出）
-        return c - Tween['bounceOut'](d - t, 0, c, d) + b;
-    },
-    bounceOut: function (t, b, c, d) {
-        if ((t /= d) < (1 / 2.75)) {
-            return c * (7.5625 * t * t) + b;
-        } else if (t < (2 / 2.75)) {
-            return c * (7.5625 * (t -= (1.5 / 2.75)) * t + 0.75) + b;
-        } else if (t < (2.5 / 2.75)) {
-            return c * (7.5625 * (t -= (2.25 / 2.75)) * t + 0.9375) + b;
-        }
-        return c * (7.5625 * (t -= (2.625 / 2.75)) * t + 0.984375) + b;
-    },
-    bounceBoth: function (t, b, c, d) {
-        if (t < d / 2) {
-            return Tween['bounceIn'](t * 2, 0, c, d) * 0.5 + b;
-        }
-        return Tween['bounceOut'](t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b;
     }
 }
 
@@ -153,6 +42,9 @@ export default class IndexDo extends React.Component {
     constructor(args) {
         super(...args);
 
+        this.state = {
+            shipSrc : './static/js/'+ship1
+        }
 
     }
 
@@ -183,16 +75,32 @@ export default class IndexDo extends React.Component {
                             </div>
                             <div className="fly-rice">
                                 <img src={'./static/js/'+z2} alt=""/>
+                                <img className="fly-checked-rice" src={'./static/js/'+z2} alt=""/>
                                 <span></span>
                             </div>
                             <div className="fly-rice">
                                 <img src={'./static/js/'+z3} alt=""/>
+                                <img className="fly-checked-rice" src={'./static/js/'+z3} alt=""/>
                                 <span></span>
                             </div>
                             <div className="fly-rice">
                                 <img src={'./static/js/'+z4} alt=""/>
+                                <img className="fly-checked-rice" src={'./static/js/'+z4} alt=""/>
                                 <span></span>
                             </div>
+                        </div>
+                        <p className="fly-info">为你的朋友选个祝福的粽子吧！可以多选哦！</p>
+
+                        <div className="fly-input">
+                            <img src={'./static/js/'+input} alt=""/>
+                            <textarea placeholder="限50字以内" onInput={this.onInput.bind(this)} ref="text" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+
+                        <div className="ship">
+                            <img src={this.state.shipSrc} alt=""/>
+                        </div>
+                        <div className="fly-send-btn">
+                            <button onTouchTap={this.send.bind(this)}>送祝福</button>
                         </div>
                         <img src={'./static/js/'+leaf} alt=""/>
                     </div>
@@ -201,46 +109,151 @@ export default class IndexDo extends React.Component {
         )
     }
 
-    componentDidMount() {
-        let ang = [-55, -18, 18, 55],
-            r = 130;
+    onInput(e){
+        if(e.target.value.length >= 50){
+            e.target.value=e.target.value.substr(0,50);
+        }
+    }
 
+    componentDidMount() {
+
+        this.start = true;
+
+        let ang = [-55, -18, 18, 55],
+            r = document.documentElement.clientWidth / 2.3;
+        this.iNow = this.iNow || 0;
         $$(".fly-rice-stage .fly-rice").forEach((rice, i)=> {
             let x = -r * Math.sin(ang[i] * Math.PI / 180),
                 y = -r * Math.cos(ang[i] * Math.PI / 180);
             rice.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+            rice.style.WebkitTransform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+        });
 
+        this.ships = [ship1, ship2, ship3, ship4, ship5].map(ship=> {
+            return './static/js/' + ship;
+        });
+        this.ships.forEach(src=> {
+            let img = new Image();
+            img.onload = ()=> {
+                img = null;
+            };
+            img.src = src;
+        });
+
+        this.raceArr = [] ;
+
+    }
+
+    send(){
+       ///
+       let loader = new SVGLoader( document.getElementById( 'loader1' ), { speedIn : 300, easingIn : mina.easeinout } );
+
+        let raceArr =  this.raceArr;
+        let text = this.refs['text'].value;
+
+
+        let obj = {
+            race : raceArr,
+            text:text
+        }
+
+
+        window.location.hash = escape(JSON.stringify(obj));
+
+
+        loader.show();
+        setTimeout(()=>{
+            loader.hide();
+            classie.removeClass(_$(".fly-finish"),'container');
+            classie.addClass(_$(".fly-index-do"),'container');
+        },1000);
+    }
+
+    onChecked(e) {
+
+        if (e.target.parentNode.lastChild.innerHTML === '✔') {
+            return;
+        }
+        let target =e.target;
+
+        this.startMove(_$('.fly-index-C'),{scrollTop:400},500,'easeIn',()=>{
+            this.riceDown(target.parentNode.childNodes[1], speedX[index], index);
         });
 
 
-    }
-    onChecked(e){
 
-       /// $('html,body').animate({scrollTop:40},1000);
+        let index = -1,
+            speedX = [3, 1, -1, -3];
+        $$('.fly-rice').forEach((rice, i)=> {
+            if (rice === e.target.parentNode) {
+                index = i;
+                rice.classList.add('maxZindex');
+            }
+            else{
+                rice.classList.remove('maxZindex')
+            }
+        });
 
 
+        this.iNow++;
 
-        //this.startMove(document.body,{scrollTop:300},1000,'linear');
-
-        this.riceDown(_$(".fly-checked-rice"));
         e.target.parentNode.lastChild.innerHTML = '✔';
     }
 
-    riceDown(obj){
-        /*let startY= - 10,
-            speedX = 1,
-            x = 0,
-            y = 0;
+    riceDown(obj, speedX = 3, index) {
 
-        setInterval(()=>{
-            x+=-speedX;
-            y+=startY+speedX;
-            obj.style.transform = 'translate3d('+x+'px,'+y+'px,0)';
-        },20);*/
+        if(this.start ){
+
+            let startY = -10,
+                x = 0,
+                y = 0;
+
+            obj.classList.add('active');
+
+
+
+            let ship = _$('.ship'),
+                shipTop = ship.offsetTop,
+                currentTop = obj.parentNode.offsetTop,
+                objH = obj.offsetHeight / 1.5;
+
+            let dis = [0, objH, objH, 0];
+            let maxH = shipTop - currentTop + objH + dis[index],
+
+
+                half = false;
+
+            this.raceArr.push(index);
+
+            obj.timer = setInterval(()=> {
+                x += -speedX;
+                startY += .7;
+                y += startY;
+
+                if (y >= maxH / 8 && !half) {
+                    half = true;
+                    obj.src = './static/js/' + step1;
+                }
+                if (y > maxH) {
+                    y = maxH;
+
+                    this.setState({
+                        shipSrc:this.ships[this.iNow]
+                    });
+                    obj.classList.remove('active');
+                    clearInterval(obj.timer);
+                    this.start = true;
+                }
+                //console.log(y )
+                obj.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+                obj.style.WebkitTransform = 'translate3d(' + x + 'px,' + y + 'px,0)';
+            }, 20);
+        }
 
 
     }
-    startMove(obj, json, times, fx, fn){
+
+    startMove(obj, json, times, fx, fn) {
         var iCur = {};
         var startTime = now();
         for (var attr in json) {
@@ -248,8 +261,9 @@ export default class IndexDo extends React.Component {
             if (attr == 'opacity') {
                 iCur[attr] = Math.round(this.getStyle(obj, attr) * 100);
             }
-            else if(attr === "scrollTop"){
-                iCur[attr] = document.body.scrollTop || document.documentElement.scrollTop;
+            else if (attr === "scrollTop") {
+                iCur[attr] = obj.scrollTop ;
+
             }
             else {
                 iCur[attr] = parseInt(this.getStyle(obj, attr));
@@ -260,7 +274,9 @@ export default class IndexDo extends React.Component {
             var changeTime = now();
             var scale = 1 - Math.max(0, startTime - changeTime + times) / times;
             for (var attr in json) {
+
                 var value = Tween[fx](scale * times, iCur[attr], json[attr] - iCur[attr], times);
+
 
 
                 if (attr == 'opacity') {
@@ -268,8 +284,8 @@ export default class IndexDo extends React.Component {
                     obj.style.opacity = value / 100;
                 }
                 else if (attr.toLowerCase() == "scrolltop") {
-                    document.body.scrollTop = value;
-                    document.documentElement.scrollTop = value;
+                    obj.scrollTop = value;
+                    obj.scrollTop = value;
 
                 }
                 else {
@@ -288,7 +304,8 @@ export default class IndexDo extends React.Component {
         }
 
     }
-     getStyle(obj, attr) {
+
+    getStyle(obj, attr) {
         if (obj.currentStyle) {
             return obj.currentStyle[attr];
         }

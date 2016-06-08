@@ -3,7 +3,8 @@ body {
   font-size: 14px;
   height: 100%;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none; }
 
 .fly-index-C {
   width: 100vw;
@@ -27,36 +28,86 @@ body {
       width: 20vw;
       position: absolute;
       top: -3vh;
-      left: 32vw; }
+      left: 36vw; }
     .fly-index-C .fly-leaf .fly-t-info {
       position: absolute;
       top: 10vh;
-      left: 25vw;
+      left: 26vw;
       width: 40vw; }
-  .fly-index-C .fly-rice-stage .fly-rice {
-    width: 25vw;
+  .fly-index-C .fly-rice-stage {
+    position: relative;
+    z-index: 1000; }
+    .fly-index-C .fly-rice-stage .fly-rice {
+      width: 25vw;
+      z-index: 1;
+      position: absolute;
+      top: 46vh;
+      left: 35vw; }
+      .fly-index-C .fly-rice-stage .fly-rice.maxZindex {
+        z-index: 10; }
+      .fly-index-C .fly-rice-stage .fly-rice span {
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 6px;
+        border: 1px dashed #91cfa5;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        color: red;
+        background: #fff;
+        font-size: 20px;
+        line-height: 20px; }
+      .fly-index-C .fly-rice-stage .fly-rice .fly-checked-rice {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none; }
+        .fly-index-C .fly-rice-stage .fly-rice .fly-checked-rice.active {
+          display: block; }
+  .fly-index-C .fly-info {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
     position: absolute;
-    top: 40vh;
-    left: 35vw; }
-    .fly-index-C .fly-rice-stage .fly-rice span {
-      display: block;
+    text-align: center;
+    -webkit-text-size-adjust: none;
+    font-size: 10px;
+    color: #fff;
+    top: 43vh; }
+  .fly-index-C .fly-input {
+    width: 80%;
+    left: 10%;
+    top: 50vh;
+    z-index: 1;
+    position: absolute; }
+    .fly-index-C .fly-input textarea {
       position: absolute;
-      right: 10px;
-      bottom: 10px;
-      border-radius: 6px;
-      border: 2px dashed #91cfa5;
-      box-sizing: border-box;
-      width: 20px;
-      height: 20px;
-      color: red;
-      font-size: 20px;
-      line-height: 20px; }
-    .fly-index-C .fly-rice-stage .fly-rice .fly-checked-rice {
-      position: absolute;
-      left: 0;
-      top: 0;
-      display: none; }
-      .fly-index-C .fly-rice-stage .fly-rice .fly-checked-rice.active {
-        display: block; }
+      left: 22%;
+      top: 20%;
+      background: transparent;
+      width: 56%;
+      height: 56%;
+      border: none; }
+  .fly-index-C .ship {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 80vh; }
+  .fly-index-C .fly-send-btn {
+    width: 100%;
+    position: absolute;
+    top: 98vh;
+    text-align: center; }
+    .fly-index-C .fly-send-btn button {
+      background: #fff;
+      color: green;
+      border: none;
+      width: 50%;
+      font-weight: bold;
+      outline: none;
+      height: 30px;
+      border-radius: 6px; }
 
 /*# sourceMappingURL=index-do.css.map */

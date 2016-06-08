@@ -16,10 +16,11 @@ body {
   .fly-pub-page .fly-center-circle {
     position: absolute;
     top: 10vh;
-    width: 100vw;
-    height: 100vw;
+    left: 5vw;
+    width: 90vw;
+    height: 90vw;
     background: #fff;
-    z-index: 10;
+    z-index: 101;
     border-radius: 50%;
     box-shadow: 5px 15px 0 #3d772b; }
   .fly-pub-page .fly-rice {
@@ -37,7 +38,7 @@ body {
     text-align: center; }
     .fly-pub-page .fly-btn-C button {
       width: 100%;
-      height: 26px;
+      height: 30px;
       border-radius: 5px;
       border: none;
       outline: none;

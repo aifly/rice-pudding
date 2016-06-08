@@ -24,10 +24,7 @@ export default class MainStage extends React.Component{
                 </div>
                 <div className="fly-btn-C">
                     {this.props.btns}
-
                 </div>
-
-
             </div>
         )
     }

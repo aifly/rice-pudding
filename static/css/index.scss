@@ -147,11 +147,73 @@ body {
 .fly-center-box{
   width:70vw;
   margin:16vw auto;
+
+  button{
+    width:50%;
+    height:30px;
+    background: #eee;
+    @include pos(a);
+    left: 25%;
+    top:33vh;
+    border:none;
+    @include br(5px);
+  }
+  .title{
+    @include pos(a);
+    left:0;
+    z-index:100;
+    top:2vh;
+  }
+
+  .fly-text-C{
+    width:80%;
+    height:25vh;
+    background:#ccc;
+    @include pos(a);
+    top:15vh;
+    padding:10px;
+    box-sizing: border-box;
+    p{
+      text-indent: 2em;
+      line-height:25px;
+    }
+    h2{
+      height:6vh;
+    }
+  }
+
+  @for $i from 0 through 3{
+    .zz-#{$i}{
+      @include pos(a);
+      width:17vw;
+      z-index:100;
+      left: $i * 24vw;
+    }
+  }
+
+
+
+
+
 }
 
+.fly-mask,.fly-mask1{
+  width:100%;
+  height:100%;
+  @include pos(a);
+  left:0;
+  top:0;
+  background:rgba(0,0,0,.5);
+  z-index:9999;
+  text-align: right;;
+  img{
+
+    
+  }
+}
 
 .shake-constant {
-  @include animation(shake 2000ms  ease-in-out infinite);
+  @include animation(shake 1000ms 500ms ease-in-out infinite);
 }
 
 @keyframes shake {
@@ -374,6 +436,7 @@ body {
   top: 0;
   left: 0;
   visibility: hidden;
+  z-index:9999;
 }
 
 .pageload-overlay.show {
@@ -388,7 +451,7 @@ body {
 }
 
 .pageload-overlay svg path {
-  fill: #fff;
+  fill: green;
 }
 
 .pageload-overlay::after,

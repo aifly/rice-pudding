@@ -34,10 +34,67 @@ body {
 .fly-center-box {
   width: 70vw;
   margin: 16vw auto; }
+  .fly-center-box button {
+    width: 50%;
+    height: 30px;
+    background: #eee;
+    position: absolute;
+    left: 25%;
+    top: 33vh;
+    border: none;
+    border-radius: 5px; }
+  .fly-center-box .title {
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    top: 2vh; }
+  .fly-center-box .fly-text-C {
+    width: 80%;
+    height: 25vh;
+    background: #ccc;
+    position: absolute;
+    top: 15vh;
+    padding: 10px;
+    box-sizing: border-box; }
+    .fly-center-box .fly-text-C p {
+      text-indent: 2em;
+      line-height: 25px; }
+    .fly-center-box .fly-text-C h2 {
+      height: 6vh; }
+  .fly-center-box .zz-0 {
+    position: absolute;
+    width: 17vw;
+    z-index: 100;
+    left: 0vw; }
+  .fly-center-box .zz-1 {
+    position: absolute;
+    width: 17vw;
+    z-index: 100;
+    left: 24vw; }
+  .fly-center-box .zz-2 {
+    position: absolute;
+    width: 17vw;
+    z-index: 100;
+    left: 48vw; }
+  .fly-center-box .zz-3 {
+    position: absolute;
+    width: 17vw;
+    z-index: 100;
+    left: 72vw; }
+
+.fly-mask, .fly-mask1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  text-align: right; }
 
 .shake-constant {
-  -webkit-animation: shake 2000ms ease-in-out infinite;
-  animation: shake 2000ms ease-in-out infinite; }
+  -webkit-animation: shake 1000ms 500ms ease-in-out infinite;
+  animation: shake 1000ms 500ms ease-in-out infinite; }
 
 @keyframes shake {
   2% {
@@ -253,7 +310,8 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  z-index: 9999; }
 
 .pageload-overlay.show {
   visibility: visible; }
@@ -265,7 +323,7 @@ body {
   pointer-events: none; }
 
 .pageload-overlay svg path {
-  fill: #fff; }
+  fill: green; }
 
 .pageload-overlay::after,
 .pageload-overlay::before {
