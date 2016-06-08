@@ -209,7 +209,12 @@ class FlyMainUI extends React.Component {
          };
          console.log(JSON.stringify(riceData))*/
 
-        let dd = JSON.parse(unescape(this.prams));
+
+
+
+        let dd = JSON.parse(decodeURI(this.prams));
+
+
 
        this.setState({
             text: (dd.text)
